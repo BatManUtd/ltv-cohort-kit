@@ -1,0 +1,250 @@
+Name,Email,Created at,Total,Refunded Amount,Currency,Financial Status,Lineitem name,Lineitem quantity
+#1001,customer1@example.com,2025-01-15 17:41:00 -0500,183.50,0.00,USD,paid,Deluxe Bundle,1
+#1001,,,,,,,Blue Widget,1
+#1001,,,,,,,Red Gadget,1
+#1002,customer2@example.com,2025-01-10 10:06:00 -0500,89.00,0.00,USD,paid,Refill Pack,1
+#1002,,,,,,,Red Gadget,1
+#1002,,,,,,,Blue Widget,1
+#1003,customer3@example.com,2025-01-04 11:38:00 -0500,39.00,0.00,USD,paid,Deluxe Bundle,1
+#1004,customer4@example.com,2025-01-01 13:33:00 -0500,240.00,0.00,USD,paid,Refill Pack,1
+#1004,,,,,,,Red Gadget,1
+#1005,customer5@example.com,2025-01-04 16:17:00 -0500,59.00,0.00,USD,paid,Blue Widget,1
+#1006,customer6@example.com,2025-01-09 14:43:00 -0500,209.00,0.00,USD,paid,Deluxe Bundle,1
+#1006,,,,,,,Blue Widget,1
+#1007,customer7@example.com,2025-01-27 10:48:00 -0500,59.00,29.50,USD,paid,Blue Widget,1
+#1008,customer8@example.com,2025-01-15 17:25:00 -0500,118.00,0.00,USD,paid,Deluxe Bundle,1
+#1008,,,,,,,Blue Widget,1
+#1009,customer9@example.com,2025-01-05 14:31:00 -0500,172.50,0.00,USD,paid,Green Doohickey,1
+#1009,,,,,,,Red Gadget,1
+#1009,,,,,,,Red Gadget,1
+#1010,customer10@example.com,2025-01-23 13:05:00 -0500,233.50,0.00,USD,paid,Deluxe Bundle,1
+#1010,,,,,,,Blue Widget,1
+#1010,,,,,,,Starter Kit,1
+#1011,customer3@example.com,2025-02-04 12:04:00 -0500,172.50,0.00,USD,paid,Starter Kit,1
+#1011,,,,,,,Blue Widget,1
+#1011,,,,,,,Deluxe Bundle,1
+#1012,customer4@example.com,2025-02-26 17:36:00 -0500,178.00,0.00,USD,paid,Green Doohickey,1
+#1012,,,,,,,Red Gadget,1
+#1013,customer5@example.com,2025-02-27 14:13:00 -0500,78.50,0.00,USD,paid,Starter Kit,1
+#1013,,,,,,,Red Gadget,1
+#1013,,,,,,,Deluxe Bundle,1
+#1014,customer6@example.com,2025-02-21 17:10:00 -0500,39.00,0.00,USD,paid,Red Gadget,1
+#1015,customer8@example.com,2025-02-02 09:20:00 -0500,120.00,0.00,USD,paid,Blue Widget,1
+#1016,customer10@example.com,2025-02-22 11:22:00 -0500,179.00,0.00,USD,paid,Starter Kit,1
+#1016,,,,,,,Starter Kit,1
+#1017,customer11@example.com,2025-02-22 17:23:00 -0500,24.50,0.00,USD,paid,Refill Pack,1
+#1018,customer12@example.com,2025-02-23 16:51:00 -0500,59.00,29.50,USD,paid,Green Doohickey,1
+#1019,customer13@example.com,2025-02-17 16:40:00 -0500,113.50,0.00,USD,paid,Starter Kit,1
+#1019,,,,,,,Red Gadget,1
+#1020,,2025-02-06 15:04:00 -0500,120.00,0.00,USD,paid,Blue Widget,1
+#1021,customer15@example.com,2025-02-23 15:20:00 -0500,209.00,0.00,USD,paid,Green Doohickey,1
+#1021,,,,,,,Starter Kit,1
+#1022,customer16@example.com,2025-02-02 08:21:00 -0500,159.00,0.00,USD,paid,Starter Kit,1
+#1022,,,,,,,Green Doohickey,1
+#1023,customer17@example.com,2025-02-20 09:38:00 -0500,108.00,0.00,USD,paid,Refill Pack,1
+#1023,,,,,,,Starter Kit,1
+#1023,,,,,,,Refill Pack,1
+#1024,customer18@example.com,2025-02-16 15:57:00 -0500,24.50,0.00,USD,paid,Deluxe Bundle,1
+#1025,customer19@example.com,2025-02-17 09:15:00 -0500,118.00,0.00,USD,paid,Red Gadget,1
+#1025,,,,,,,Green Doohickey,1
+#1026,customer20@example.com,2025-02-23 08:51:00 -0500,194.00,0.00,USD,paid,Deluxe Bundle,1
+#1026,,,,,,,Blue Widget,1
+#1026,,,,,,,Deluxe Bundle,1
+#1027,customer6@example.com,2025-03-18 17:02:00 -0500,89.00,0.00,USD,paid,Blue Widget,1
+#1028,customer11@example.com,2025-03-06 14:35:00 -0500,135.00,0.00,USD,paid,Starter Kit,1
+#1028,,,,,,,Refill Pack,1
+#1029,customer12@example.com,2025-03-27 09:51:00 -0500,78.00,0.00,USD,paid,Blue Widget,1
+#1029,,,,,,,Deluxe Bundle,1
+#1030,customer13@example.com,2025-03-09 12:18:00 -0500,59.00,0.00,USD,paid,Red Gadget,1
+#1031,customer15@example.com,2025-03-09 10:14:00 -0500,113.00,0.00,USD,paid,Red Gadget,1
+#1031,,,,,,,Red Gadget,1
+#1031,,,,,,,Refill Pack,1
+#1032,customer18@example.com,2025-03-19 09:46:00 -0500,49.00,0.00,USD,paid,Starter Kit,1
+#1032,,,,,,,Red Gadget,1
+#1033,customer19@example.com,2025-03-27 11:38:00 -0500,118.00,0.00,USD,paid,Green Doohickey,1
+#1033,,,,,,,Blue Widget,1
+#1034,customer20@example.com,2025-03-16 11:11:00 -0500,268.00,0.00,USD,paid,Deluxe Bundle,1
+#1034,,,,,,,Refill Pack,1
+#1034,,,,,,,Refill Pack,1
+#1035,customer21@example.com,2025-03-05 08:18:00 -0500,59.00,0.00,USD,paid,Blue Widget,1
+#1036,customer22@example.com,2025-03-24 15:52:00 -0500,59.00,0.00,USD,paid,Refill Pack,1
+#1037,customer23@example.com,2025-03-13 12:25:00 -0500,89.00,0.00,USD,paid,Starter Kit,1
+#1038,customer24@example.com,2025-03-24 09:24:00 -0500,39.50,0.00,USD,paid,Red Gadget,1
+#1038,,,,,,,Refill Pack,1
+#1039,customer25@example.com,2025-03-03 11:18:00 -0500,174.00,0.00,USD,paid,Refill Pack,1
+#1039,,,,,,,Green Doohickey,1
+#1039,,,,,,,Green Doohickey,1
+#1040,customer26@example.com,2025-03-27 11:03:00 -0500,224.00,0.00,USD,paid,Red Gadget,1
+#1040,,,,,,,Refill Pack,1
+#1040,,,,,,,Green Doohickey,1
+#1041,customer27@example.com,2025-03-26 10:25:00 -0500,15.00,0.00,USD,paid,Refill Pack,1
+#1042,customer28@example.com,2025-03-15 16:21:00 -0500,59.00,0.00,USD,paid,Blue Widget,1
+#1043,,2025-03-06 11:17:00 -0500,24.50,0.00,USD,paid,Red Gadget,1
+#1044,customer30@example.com,2025-03-26 12:50:00 -0500,159.00,0.00,USD,paid,Starter Kit,1
+#1044,,,,,,,Refill Pack,1
+#1045,customer8@example.com,2025-04-05 10:09:00 -0500,163.00,0.00,USD,paid,Red Gadget,1
+#1045,,,,,,,Blue Widget,1
+#1045,,,,,,,Red Gadget,1
+#1046,customer11@example.com,2025-04-05 08:54:00 -0500,133.00,66.50,USD,paid,Refill Pack,1
+#1046,,,,,,,Deluxe Bundle,1
+#1046,,,,,,,Refill Pack,1
+#1047,customer26@example.com,2025-04-18 11:57:00 -0500,74.00,0.00,USD,paid,Blue Widget,1
+#1047,,,,,,,Refill Pack,1
+#1048,customer27@example.com,2025-04-06 16:24:00 -0500,207.00,0.00,USD,paid,Red Gadget,1
+#1048,,,,,,,Red Gadget,1
+#1048,,,,,,,Starter Kit,1
+#1049,customer28@example.com,2025-04-04 16:37:00 -0500,30.00,0.00,USD,paid,Deluxe Bundle,1
+#1049,,,,,,,Blue Widget,1
+#1050,customer31@example.com,2025-04-14 13:35:00 -0500,238.00,0.00,USD,paid,Deluxe Bundle,1
+#1050,,,,,,,Green Doohickey,1
+#1050,,,,,,,Red Gadget,1
+#1051,customer32@example.com,2025-04-06 12:04:00 -0500,144.50,0.00,USD,paid,Red Gadget,1
+#1051,,,,,,,Refill Pack,1
+#1052,customer33@example.com,2025-04-21 13:16:00 -0500,209.00,0.00,USD,paid,Red Gadget,1
+#1052,,,,,,,Refill Pack,1
+#1053,customer34@example.com,2025-04-17 15:31:00 -0500,24.50,0.00,USD,paid,Refill Pack,1
+#1054,customer35@example.com,2025-04-23 14:03:00 -0500,113.50,0.00,USD,paid,Deluxe Bundle,1
+#1054,,,,,,,Refill Pack,1
+#1055,customer36@example.com,2025-04-01 14:47:00 -0500,120.00,0.00,USD,paid,Red Gadget,1
+#1056,customer37@example.com,2025-04-08 14:57:00 -0500,24.50,12.25,USD,paid,Starter Kit,1
+#1057,customer38@example.com,2025-04-01 08:33:00 -0500,24.50,0.00,USD,paid,Green Doohickey,1
+#1058,customer39@example.com,2025-04-23 16:28:00 -0500,120.00,0.00,USD,paid,Green Doohickey,1
+#1059,customer40@example.com,2025-04-04 08:36:00 -0500,78.00,0.00,USD,paid,Refill Pack,1
+#1059,,,,,,,Deluxe Bundle,1
+#1060,customer2@example.com,2025-05-20 10:26:00 -0500,120.00,0.00,USD,paid,Green Doohickey,1
+#1061,customer8@example.com,2025-05-11 10:54:00 -0500,157.00,0.00,USD,paid,Refill Pack,1
+#1061,,,,,,,Refill Pack,1
+#1061,,,,,,,Green Doohickey,1
+#1062,customer10@example.com,2025-05-21 12:36:00 -0500,64.00,0.00,USD,paid,Starter Kit,1
+#1062,,,,,,,Blue Widget,1
+#1062,,,,,,,Blue Widget,1
+#1063,customer15@example.com,2025-05-06 08:30:00 -0500,148.00,0.00,USD,paid,Blue Widget,1
+#1063,,,,,,,Blue Widget,1
+#1064,customer21@example.com,2025-05-04 16:12:00 -0500,83.50,0.00,USD,paid,Blue Widget,1
+#1064,,,,,,,Green Doohickey,1
+#1065,customer22@example.com,2025-05-03 16:47:00 -0500,299.00,0.00,USD,paid,Starter Kit,1
+#1065,,,,,,,Blue Widget,1
+#1065,,,,,,,Starter Kit,1
+#1066,customer23@example.com,2025-05-19 16:54:00 -0500,120.00,0.00,USD,paid,Starter Kit,1
+#1067,customer32@example.com,2025-05-03 16:17:00 -0500,39.00,0.00,USD,paid,Deluxe Bundle,1
+#1068,customer34@example.com,2025-05-01 12:48:00 -0500,15.00,0.00,USD,paid,Blue Widget,1
+#1069,customer35@example.com,2025-05-01 11:58:00 -0500,120.00,0.00,USD,paid,Blue Widget,1
+#1070,customer40@example.com,2025-05-13 15:47:00 -0500,224.00,0.00,USD,paid,Refill Pack,1
+#1070,,,,,,,Blue Widget,1
+#1070,,,,,,,Red Gadget,1
+#1071,customer41@example.com,2025-05-08 08:45:00 -0500,74.00,0.00,USD,paid,Blue Widget,1
+#1071,,,,,,,Blue Widget,1
+#1072,customer42@example.com,2025-05-22 16:33:00 -0500,54.00,0.00,USD,paid,Refill Pack,1
+#1072,,,,,,,Starter Kit,1
+#1073,customer43@example.com,2025-05-19 17:45:00 -0500,120.00,0.00,USD,paid,Deluxe Bundle,1
+#1074,customer44@example.com,2025-05-18 15:25:00 -0500,39.00,0.00,USD,paid,Refill Pack,1
+#1075,,2025-05-06 08:17:00 -0500,39.00,0.00,USD,paid,Green Doohickey,1
+#1076,customer46@example.com,2025-05-16 16:01:00 -0500,24.50,0.00,USD,paid,Blue Widget,1
+#1077,customer47@example.com,2025-05-06 10:58:00 -0500,83.50,0.00,USD,paid,Blue Widget,1
+#1077,,,,,,,Red Gadget,1
+#1078,customer48@example.com,2025-05-05 17:06:00 -0500,63.50,0.00,USD,paid,Red Gadget,1
+#1078,,,,,,,Red Gadget,1
+#1079,customer49@example.com,2025-05-18 10:19:00 -0500,237.00,0.00,USD,paid,Blue Widget,1
+#1079,,,,,,,Blue Widget,1
+#1079,,,,,,,Blue Widget,1
+#1080,customer50@example.com,2025-05-21 08:47:00 -0500,169.00,84.50,USD,paid,Deluxe Bundle,1
+#1080,,,,,,,Green Doohickey,1
+#1080,,,,,,,Red Gadget,1
+#1081,customer8@example.com,2025-06-22 12:11:00 -0500,172.50,0.00,USD,paid,Refill Pack,1
+#1081,,,,,,,Refill Pack,1
+#1081,,,,,,,Refill Pack,1
+#1082,customer17@example.com,2025-06-27 15:02:00 -0500,89.00,0.00,USD,paid,Blue Widget,1
+#1083,customer18@example.com,2025-06-08 13:47:00 -0500,178.00,0.00,USD,paid,Red Gadget,1
+#1083,,,,,,,Red Gadget,1
+#1084,customer21@example.com,2025-06-14 17:36:00 -0500,89.00,0.00,USD,paid,Deluxe Bundle,1
+#1085,,2025-06-08 13:03:00 -0500,248.00,0.00,USD,paid,Green Doohickey,1
+#1085,,,,,,,Refill Pack,1
+#1085,,,,,,,Starter Kit,1
+#1086,customer24@example.com,2025-06-03 14:05:00 -0500,49.00,0.00,USD,paid,Refill Pack,1
+#1086,,,,,,,Starter Kit,1
+#1087,customer30@example.com,2025-06-15 08:22:00 -0500,39.00,0.00,USD,paid,Deluxe Bundle,1
+#1088,customer40@example.com,2025-06-10 12:04:00 -0500,172.50,0.00,USD,paid,Deluxe Bundle,1
+#1088,,,,,,,Deluxe Bundle,1
+#1088,,,,,,,Starter Kit,1
+#1089,customer41@example.com,2025-06-07 11:24:00 -0500,172.50,0.00,USD,paid,Green Doohickey,1
+#1089,,,,,,,Starter Kit,1
+#1089,,,,,,,Refill Pack,1
+#1090,customer42@example.com,2025-06-25 09:37:00 -0500,138.00,0.00,USD,paid,Green Doohickey,1
+#1090,,,,,,,Starter Kit,1
+#1090,,,,,,,Red Gadget,1
+#1091,customer43@example.com,2025-06-22 15:30:00 -0500,157.00,0.00,USD,paid,Starter Kit,1
+#1091,,,,,,,Blue Widget,1
+#1091,,,,,,,Refill Pack,1
+#1092,customer46@example.com,2025-06-11 14:08:00 -0500,120.00,0.00,USD,paid,Blue Widget,1
+#1093,customer47@example.com,2025-06-19 09:14:00 -0500,104.00,0.00,USD,paid,Blue Widget,1
+#1093,,,,,,,Green Doohickey,1
+#1094,customer49@example.com,2025-06-09 13:48:00 -0500,54.00,0.00,USD,paid,Red Gadget,1
+#1094,,,,,,,Starter Kit,1
+#1095,customer50@example.com,2025-06-11 15:40:00 -0500,120.00,0.00,USD,paid,Starter Kit,1
+#1096,customer51@example.com,2025-06-21 17:39:00 -0500,172.50,0.00,USD,paid,Red Gadget,1
+#1096,,,,,,,Green Doohickey,1
+#1096,,,,,,,Blue Widget,1
+#1097,customer52@example.com,2025-06-02 14:18:00 -0500,15.00,0.00,USD,paid,Red Gadget,1
+#1098,customer53@example.com,2025-06-13 11:56:00 -0500,78.50,0.00,USD,paid,Refill Pack,1
+#1098,,,,,,,Starter Kit,1
+#1098,,,,,,,Red Gadget,1
+#1099,customer54@example.com,2025-06-04 12:11:00 -0500,128.00,0.00,USD,paid,Refill Pack,1
+#1099,,,,,,,Refill Pack,1
+#1100,,2025-06-03 16:20:00 -0500,120.00,60.00,USD,paid,Refill Pack,1
+#1101,customer56@example.com,2025-06-14 13:23:00 -0500,203.50,0.00,USD,paid,Starter Kit,1
+#1101,,,,,,,Blue Widget,1
+#1101,,,,,,,Starter Kit,1
+#1102,customer57@example.com,2025-06-09 08:07:00 -0500,59.00,0.00,USD,paid,Green Doohickey,1
+#1103,customer58@example.com,2025-06-27 16:27:00 -0500,267.00,0.00,USD,paid,Red Gadget,1
+#1103,,,,,,,Blue Widget,1
+#1103,,,,,,,Starter Kit,1
+#1104,customer59@example.com,2025-06-07 08:41:00 -0500,15.00,0.00,USD,paid,Red Gadget,1
+#1105,customer60@example.com,2025-06-04 08:35:00 -0500,233.50,0.00,USD,paid,Starter Kit,1
+#1105,,,,,,,Red Gadget,1
+#1105,,,,,,,Blue Widget,1
+#1106,customer5@example.com,2025-07-16 08:36:00 -0500,54.00,0.00,USD,paid,Refill Pack,1
+#1106,,,,,,,Refill Pack,1
+#1107,customer7@example.com,2025-07-15 10:38:00 -0500,118.00,0.00,USD,paid,Refill Pack,1
+#1107,,,,,,,Starter Kit,1
+#1108,customer8@example.com,2025-07-20 11:20:00 -0500,24.50,0.00,USD,paid,Red Gadget,1
+#1109,customer12@example.com,2025-07-12 12:39:00 -0500,59.00,0.00,USD,paid,Deluxe Bundle,1
+#1110,customer21@example.com,2025-07-05 09:03:00 -0500,264.50,0.00,USD,paid,Green Doohickey,1
+#1110,,,,,,,Refill Pack,1
+#1110,,,,,,,Red Gadget,1
+#1111,customer23@example.com,2025-07-17 12:19:00 -0500,183.50,0.00,USD,paid,Blue Widget,1
+#1111,,,,,,,Green Doohickey,1
+#1111,,,,,,,Green Doohickey,1
+#1112,customer31@example.com,2025-07-21 15:38:00 -0500,224.00,112.00,USD,paid,Starter Kit,1
+#1112,,,,,,,Deluxe Bundle,1
+#1112,,,,,,,Red Gadget,1
+#1113,customer32@example.com,2025-07-15 17:22:00 -0500,59.00,29.50,USD,paid,Blue Widget,1
+#1114,customer35@example.com,2025-07-15 15:54:00 -0500,144.50,0.00,USD,paid,Deluxe Bundle,1
+#1114,,,,,,,Green Doohickey,1
+#1115,customer37@example.com,2025-07-07 11:20:00 -0500,39.50,0.00,USD,paid,Deluxe Bundle,1
+#1115,,,,,,,Deluxe Bundle,1
+#1116,customer41@example.com,2025-07-20 10:29:00 -0500,135.00,0.00,USD,paid,Green Doohickey,1
+#1116,,,,,,,Red Gadget,1
+#1117,customer43@example.com,2025-07-15 14:03:00 -0500,78.50,0.00,USD,paid,Blue Widget,1
+#1117,,,,,,,Refill Pack,1
+#1117,,,,,,,Deluxe Bundle,1
+#1118,customer44@example.com,2025-07-27 08:01:00 -0500,218.00,0.00,USD,paid,Red Gadget,1
+#1118,,,,,,,Blue Widget,1
+#1118,,,,,,,Starter Kit,1
+#1119,customer47@example.com,2025-07-09 15:46:00 -0500,159.00,0.00,USD,paid,Deluxe Bundle,1
+#1119,,,,,,,Starter Kit,1
+#1120,customer49@example.com,2025-07-11 13:49:00 -0500,39.00,0.00,USD,paid,Green Doohickey,1
+#1121,customer52@example.com,2025-07-12 10:51:00 -0500,120.00,0.00,USD,paid,Deluxe Bundle,1
+#1122,customer53@example.com,2025-07-23 14:09:00 -0500,218.00,0.00,USD,paid,Red Gadget,1
+#1122,,,,,,,Blue Widget,1
+#1122,,,,,,,Green Doohickey,1
+#1123,customer54@example.com,2025-07-08 14:42:00 -0500,120.00,0.00,USD,paid,Red Gadget,1
+#1124,customer55@example.com,2025-07-26 11:34:00 -0500,74.00,0.00,USD,paid,Blue Widget,1
+#1124,,,,,,,Refill Pack,1
+#1125,customer57@example.com,2025-07-27 11:44:00 -0500,233.50,0.00,USD,paid,Refill Pack,1
+#1125,,,,,,,Blue Widget,1
+#1125,,,,,,,Green Doohickey,1
+#1126,customer58@example.com,2025-07-01 14:17:00 -0500,74.00,0.00,USD,paid,Deluxe Bundle,1
+#1126,,,,,,,Green Doohickey,1
+#1127,customer60@example.com,2025-07-17 11:42:00 -0500,122.50,0.00,USD,paid,Starter Kit,1
+#1127,,,,,,,Refill Pack,1
+#1127,,,,,,,Green Doohickey,1

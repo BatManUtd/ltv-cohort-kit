@@ -1,0 +1,10 @@
+Name,Email,Created at,Total,Refunded Amount,Currency,Lineitem name
+#1001,ann@example.com,2025-01-05 10:00:00 -0500,100.00,0.00,USD,Blue Widget
+#1001,,,,,,Red Gadget
+#1002,bob@example.com,2025-01-20 09:30:00 -0500,50.00,0.00,USD,Blue Widget
+#1003,ann@example.com,2025-02-10 15:12:00 -0500,40.00,10.00,USD,Green Doohickey
+#1004,,2025-01-25 11:00:00 -0500,25.00,0.00,USD,Blue Widget
+#1005,bob@example.com,2025-01-20 18:45:00 -0500,0.00,0.00,USD,Free Sample
+#1006,cara@example.com,2025-03-03 08:00:00 -0500,200.00,0.00,USD,Deluxe Bundle
+#1007,ann@example.com,2025-04-02 12:00:00 -0400,500.00,0.00,USD,Mega Pack
+#1008,dana@example.com,2025-02-05 10:10:00 -0500,80.00,0.00,USD,Blue Widget

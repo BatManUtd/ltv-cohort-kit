@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ltv-cohort-kit — cohort LTV &amp; CAC payback from an order CSV</title>
+<!--
+  Zero network calls by design: no CDN scripts, no fonts, no analytics, no
+  fetch/XHR anywhere. Open DevTools > Network to verify — nothing loads but
+  this file and the three local scripts below. Your data never leaves this
+  machine.
+-->
+<style>
+  :root { --ink:#1f2937; --mut:#64748b; --line:#e2e8f0; --acc:#2563eb; --warn:#b45309; --err:#b91c1c; --ok:#047857; --bg:#f8fafc; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color:var(--ink); background:var(--bg); font-size:15px; line-height:1.5; }
+  header { padding:20px 28px 12px; border-bottom:1px solid var(--line); background:#fff; }
+  header h1 { margin:0 0 4px; font-size:22px; }
+  header p { margin:0; color:var(--mut); max-width:70ch; }
+  .layout { display:grid; grid-template-columns: minmax(0,1fr) 340px; gap:24px; padding:24px 28px; align-items:start; }
+  @media (max-width: 980px) { .layout { grid-template-columns: 1fr; } }
+  section.card { background:#fff; border:1px solid var(--line); border-radius:10px; padding:18px 20px; margin-bottom:20px; }
+  section.card h2 { margin:0 0 10px; font-size:16px; }
+  .hint { color:var(--mut); font-size:13.5px; margin:4px 0 10px; }
+  .status { margin:12px 28px 0; padding:10px 14px; border-radius:8px; background:#eef2ff; color:#3730a3; font-size:14px; min-height:1em; }
+  .status.error { background:#fef2f2; color:var(--err); }
+  progress { width:100%; height:10px; margin-top:8px; }
+  #mappingFields { display:grid; grid-template-columns:1fr 1fr; gap:10px 18px; }
+  #mappingFields label { display:flex; flex-direction:column; font-size:13px; color:var(--mut); gap:3px; }
+  #mappingFields select, input[type="month"], input[type="number"], input[type="date"] { padding:6px 8px; border:1px solid var(--line); border-radius:6px; font-size:14px; background:#fff; color:var(--ink); }
+  button { font: inherit; padding:8px 16px; border-radius:8px; border:1px solid var(--acc); background:var(--acc); color:#fff; cursor:pointer; }
+  button:disabled { opacity:.45; cursor:not-allowed; }
+  button.ghost { background:transparent; color:var(--acc); border-color:var(--line); padding:4px 10px; font-size:13px; }
+  table { border-collapse:collapse; width:100%; font-size:13.5px; }
+  th, td { text-align:left; padding:6px 10px; border-bottom:1px solid var(--line); }
+  th { color:var(--mut); font-weight:600; }
+  tr.lowconf td { color:var(--warn); }
+  #warningsBox { margin:0; padding-left:20px; color:var(--warn); font-size:14px; }
+  #warningsBox li.ok { color:var(--ok); list-style:none; margin-left:-20px; }
+  .summary { font-size:17px; font-weight:600; margin:0 0 4px; }
+  .chartwrap { overflow-x:auto; padding:6px 0; }
+  aside .card { position:sticky; top:16px; }
+  aside h2 { font-size:15px; }
+  aside dl { margin:0; font-size:13.5px; }
+  aside dt { font-weight:600; margin-top:10px; }
+  aside dd { margin:2px 0 0 0; color:var(--mut); }
+  code { background:#f1f5f9; padding:1px 5px; border-radius:4px; font-size:12.5px; }
+  .exports button { margin:0 8px 8px 0; }
+  details { font-size:13.5px; }
+  fieldset { border:1px solid var(--line); border-radius:8px; margin:10px 0 0; }
+  legend { font-size:13px; color:var(--mut); padding:0 6px; }
+  .row { display:flex; gap:18px; flex-wrap:wrap; align-items:flex-end; }
+  .row label { display:flex; flex-direction:column; gap:3px; font-size:13px; color:var(--mut); }
+</style>
+</head>
+<body>
+<header>
+  <h1>ltv-cohort-kit</h1>
+  <p>Repeat-purchase cohort tables and CAC-payback LTV curves from a Shopify or WooCommerce
+     order export. Deterministic math, defined below on the right, verifiable in a spreadsheet.
+     Everything runs in this page — <strong>no data leaves your machine</strong>
+     (check DevTools&nbsp;&gt;&nbsp;Network: zero requests).</p>
+</header>
+<div class="status" id="statusLine">Choose an orders CSV to begin. Nothing is uploaded anywhere.</div>
+
+<div class="layout">
+<main>
+  <section class="card">
+    <h2>1 · Orders CSV</h2>
+    <p class="hint">Shopify: Admin → Orders → Export → “Plain CSV file”. One row per line item is
+       expected and handled — revenue is never double-counted. WooCommerce and generic
+       one-row-per-order exports also work.</p>
+    <input type="file" id="ordersFile" accept=".csv,text/csv">
+    <progress id="ordersProgress" value="0" max="100" hidden></progress>
+    <div id="mappingSection" hidden>
+      <p class="hint" id="presetNote"></p>
+      <div id="mappingFields"></div>
+      <fieldset id="dateFormatSection" hidden>
+        <legend>Ambiguous dates found — pick the format (we never guess)</legend>
+        <p class="hint">Samples: <code id="dateSamples"></code></p>
+        <label><input type="radio" name="dateFormat" value="mdy"> MM/DD/YYYY (US)</label>
+        <label><input type="radio" name="dateFormat" value="dmy"> DD/MM/YYYY (EU/UK)</label>
+      </fieldset>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>2 · Monthly marketing spend (for CAC)</h2>
+    <p class="hint">Load a CSV with <code>Month,Spend</code> columns (months as
+       <code>YYYY-MM</code> or any full date) or type the numbers in. Months without spend
+       show “CAC unavailable” — never CAC&nbsp;=&nbsp;0. Optional: skip it to get cohorts and
+       LTV without payback.</p>
+    <input type="file" id="spendFile" accept=".csv,text/csv">
+    <table><thead><tr><th>Month</th><th>Spend</th><th></th></tr></thead>
+      <tbody id="spendRows"></tbody></table>
+    <button type="button" class="ghost" id="addSpendRow">+ add month</button>
+  </section>
+
+  <section class="card">
+    <h2>3 · Settings</h2>
+    <div class="row">
+      <label>Gross margin % <input type="number" id="marginInput" min="0" max="100" step="1" value="60"></label>
+      <label>Low-confidence below (customers) <input type="number" id="minCohortInput" min="1" step="1" value="30"></label>
+      <label>As-of date (for censoring) <input type="date" id="asOfInput"></label>
+      <button id="computeBtn" disabled>Compute</button>
+    </div>
+    <p class="hint">The as-of date fixes which months count as “fully elapsed”. Re-running with
+       the same file, mapping, and as-of date always reproduces identical numbers.</p>
+  </section>
+
+  <div id="results" hidden>
+    <section class="card">
+      <h2>Sanity check</h2>
+      <p class="summary" id="summaryLine"></p>
+      <p class="hint">If these counts look wrong, the column mapping is wrong — fix it before
+         trusting anything below.</p>
+      <ul id="warningsBox"></ul>
+      <p class="hint" id="skippedSummary"></p>
+      <details><summary>Skipped rows (row number · reason · offending value)</summary>
+        <table id="skippedTable"><thead><tr><th>Row</th><th>Reason</th><th>Value</th></tr></thead>
+          <tbody id="skippedBox"></tbody></table>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Cohort heatmap</h2>
+      <label><input type="radio" name="heatMode" value="retention" checked> Repeat-purchase retention</label>
+      <label><input type="radio" name="heatMode" value="ltv"> Cumulative LTV / customer (margin-adjusted at <span id="marginEcho"></span>%)</label>
+      <div class="chartwrap" id="heatmapBox"></div>
+    </section>
+
+    <section class="card">
+      <h2>Payback curves</h2>
+      <p class="hint">Solid line: cumulative margin-adjusted LTV per customer. Dashed line: that
+         cohort's CAC. The ringed dot marks the payback month. Censored months are not drawn.</p>
+      <div class="chartwrap" id="curvesBox"></div>
+      <table id="paybackTable"></table>
+    </section>
+
+    <section class="card exports">
+      <h2>Export computed tables (CSV)</h2>
+      <button class="ghost" id="exportRevenue">Net revenue by cohort</button>
+      <button class="ghost" id="exportCumRevenue">Cumulative net revenue</button>
+      <button class="ghost" id="exportRetention">Retention rates</button>
+      <button class="ghost" id="exportLtv">LTV per customer</button>
+      <button class="ghost" id="exportPayback">CAC &amp; payback summary</button>
+    </section>
+  </div>
+</main>
+
+<aside>
+  <section class="card">
+    <h2>Methodology — exact definitions</h2>
+    <dl>
+      <dt>Cohort</dt>
+      <dd>Calendar month of a customer's first order, using the date written in the export
+          (no timezone conversion). Customers are keyed on the mapped email/ID, lowercased.</dd>
+      <dt>Order dedupe</dt>
+      <dd>Shopify exports one row per line item; rows are grouped by order ID and the first
+          non-empty total is used, so line items never double-count.</dd>
+      <dt>Net revenue</dt>
+      <dd>Order total − refunded amount. Refund-column amounts reduce the <em>original
+          order's month</em> (the export has no refund date, so we never guess one).
+          Standalone negative-total rows reduce the month they occur in.</dd>
+      <dt>LTV</dt>
+      <dd>LTV(k) = cumulative net revenue through month-offset k ÷ cohort size × gross
+          margin %.</dd>
+      <dt>CAC</dt>
+      <dd>Monthly marketing spend ÷ new customers acquired that month. No spend entered →
+          “CAC unavailable”, never 0. Spend in a month with zero new customers is flagged,
+          not divided.</dd>
+      <dt>Payback month</dt>
+      <dd>First observed offset k where cumulative margin-adjusted LTV per customer ≥ CAC.</dd>
+      <dt>Right-censoring</dt>
+      <dd>Months not fully elapsed at the as-of date — including the current partial month —
+          are hatched/masked, never shown as zeros or decay.</dd>
+      <dt>Retention</dt>
+      <dd>Share of the cohort with ≥1 order of total ≥ $0 in the month. $0 orders count for
+          retention but add no revenue; refunds/negative rows never count as activity.</dd>
+      <dt>Exclusions</dt>
+      <dd>Rows with a blank customer identifier can't be cohorted: they are excluded and the
+          count and revenue share are reported. Above 5% of revenue, results are flagged
+          unreliable.</dd>
+      <dt>Currencies</dt>
+      <dd>Mixed currency codes/symbols trigger a warning; amounts are never silently summed
+          across currencies. Dot-decimal amounts only; “99,00” style is rejected per row.</dd>
+      <dt>Privacy</dt>
+      <dd>This page makes zero network requests — no analytics, fonts, or CDN. Auditable in
+          DevTools → Network.</dd>
+    </dl>
+  </section>
+</aside>
+</div>
+
+<script src="src/csv.js"></script>
+<script src="src/parse.js"></script>
+<script src="src/cohort.js"></script>
+<script src="assets/charts.js"></script>
+<script src="assets/viewer.js"></script>
+</body>
+</html>

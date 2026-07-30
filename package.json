@@ -1,0 +1,14 @@
+{
+  "name": "ltv-cohort-kit",
+  "version": "1.0.0",
+  "description": "Zero-dependency repeat-purchase cohort tables and CAC-payback LTV curves from a Shopify/WooCommerce order CSV. Runs entirely in your browser or in node.",
+  "license": "MIT",
+  "author": "BatManUtd",
+  "type": "commonjs",
+  "main": "src/cohort.js",
+  "scripts": {
+    "test": "node --test tests/"
+  },
+  "keywords": ["ltv", "cohort", "cac", "payback", "shopify", "woocommerce", "d2c", "retention"],
+  "engines": { "node": ">=18" }
+}
